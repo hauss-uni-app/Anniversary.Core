@@ -1,0 +1,11 @@
+F:\UNI-APP\Anniversary.core\Anniversary.Model\bin\Debug\netcoreapp3.1\Anniversary.Model.deps.json
+F:\UNI-APP\Anniversary.core\Anniversary.Model\bin\Debug\netcoreapp3.1\Anniversary.Model.dll
+F:\UNI-APP\Anniversary.core\Anniversary.Model\bin\Debug\netcoreapp3.1\Anniversary.Model.pdb
+F:\UNI-APP\Anniversary.core\Anniversary.Model\bin\Debug\netcoreapp3.1\Anniversary.Common.dll
+F:\UNI-APP\Anniversary.core\Anniversary.Model\bin\Debug\netcoreapp3.1\Anniversary.Common.pdb
+F:\UNI-APP\Anniversary.core\Anniversary.Model\obj\Debug\netcoreapp3.1\Anniversary.Model.csprojAssemblyReference.cache
+F:\UNI-APP\Anniversary.core\Anniversary.Model\obj\Debug\netcoreapp3.1\Anniversary.Model.AssemblyInfoInputs.cache
+F:\UNI-APP\Anniversary.core\Anniversary.Model\obj\Debug\netcoreapp3.1\Anniversary.Model.AssemblyInfo.cs
+F:\UNI-APP\Anniversary.core\Anniversary.Model\obj\Debug\netcoreapp3.1\Anniversary.Model.csproj.CopyComplete
+F:\UNI-APP\Anniversary.core\Anniversary.Model\obj\Debug\netcoreapp3.1\Anniversary.Model.dll
+F:\UNI-APP\Anniversary.core\Anniversary.Model\obj\Debug\netcoreapp3.1\Anniversary.Model.pdb

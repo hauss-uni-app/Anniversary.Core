@@ -1,0 +1,20 @@
+2020-02-07 20:58:04,399| 
+Error occured seeding the Database.
+The type initializer for 'Anniversary.Model.Seed.MyContext' threw an exception.
+--------------------------------
+2020-02-07 20:58:59,952| 
+Error occured seeding the Database.
+The type initializer for 'Anniversary.Model.Seed.MyContext' threw an exception.
+--------------------------------
+2020-02-07 21:02:14,291| 
+Error occured seeding the Database.
+The type initializer for 'Anniversary.Model.Seed.MyContext' threw an exception.
+--------------------------------
+2020-02-07 21:04:18,846| 
+Error occured seeding the Database.
+The type initializer for 'Anniversary.Model.Seed.MyContext' threw an exception.
+--------------------------------
+2020-02-07 21:08:36,047| 
+Error occured seeding the Database.
+The type initializer for 'Anniversary.Model.Seed.MyContext' threw an exception.
+--------------------------------

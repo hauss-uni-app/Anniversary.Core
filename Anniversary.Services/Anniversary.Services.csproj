@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Anniversary.IRepository\Anniversary.IRepository.csproj" />
+    <ProjectReference Include="..\Anniversary.IServices\Anniversary.IServices.csproj" />
+    <ProjectReference Include="..\Anniversary.Model\Anniversary.Model.csproj" />
+  </ItemGroup>
+
+</Project>

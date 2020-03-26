@@ -1,0 +1,17 @@
+F:\UNI-APP\Anniversary.core\Anniversary.Services\bin\Release\netcoreapp3.1\Anniversary.Services.deps.json
+F:\UNI-APP\Anniversary.core\Anniversary.Services\bin\Release\netcoreapp3.1\Anniversary.Services.dll
+F:\UNI-APP\Anniversary.core\Anniversary.Services\bin\Release\netcoreapp3.1\Anniversary.Services.pdb
+F:\UNI-APP\Anniversary.core\Anniversary.Services\bin\Release\netcoreapp3.1\Anniversary.Common.dll
+F:\UNI-APP\Anniversary.core\Anniversary.Services\bin\Release\netcoreapp3.1\Anniversary.IRepository.dll
+F:\UNI-APP\Anniversary.core\Anniversary.Services\bin\Release\netcoreapp3.1\Anniversary.IServices.dll
+F:\UNI-APP\Anniversary.core\Anniversary.Services\bin\Release\netcoreapp3.1\Anniversary.Model.dll
+F:\UNI-APP\Anniversary.core\Anniversary.Services\bin\Release\netcoreapp3.1\Anniversary.IRepository.pdb
+F:\UNI-APP\Anniversary.core\Anniversary.Services\bin\Release\netcoreapp3.1\Anniversary.IServices.pdb
+F:\UNI-APP\Anniversary.core\Anniversary.Services\bin\Release\netcoreapp3.1\Anniversary.Model.pdb
+F:\UNI-APP\Anniversary.core\Anniversary.Services\bin\Release\netcoreapp3.1\Anniversary.Common.pdb
+F:\UNI-APP\Anniversary.core\Anniversary.Services\obj\Release\netcoreapp3.1\Anniversary.Services.csprojAssemblyReference.cache
+F:\UNI-APP\Anniversary.core\Anniversary.Services\obj\Release\netcoreapp3.1\Anniversary.Services.AssemblyInfoInputs.cache
+F:\UNI-APP\Anniversary.core\Anniversary.Services\obj\Release\netcoreapp3.1\Anniversary.Services.AssemblyInfo.cs
+F:\UNI-APP\Anniversary.core\Anniversary.Services\obj\Release\netcoreapp3.1\Anniversary.Services.csproj.CopyComplete
+F:\UNI-APP\Anniversary.core\Anniversary.Services\obj\Release\netcoreapp3.1\Anniversary.Services.dll
+F:\UNI-APP\Anniversary.core\Anniversary.Services\obj\Release\netcoreapp3.1\Anniversary.Services.pdb

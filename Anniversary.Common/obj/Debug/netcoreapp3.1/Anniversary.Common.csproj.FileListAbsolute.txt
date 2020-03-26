@@ -1,0 +1,8 @@
+F:\UNI-APP\Anniversary.core\Anniversary.Common\bin\Debug\netcoreapp3.1\Anniversary.Common.deps.json
+F:\UNI-APP\Anniversary.core\Anniversary.Common\bin\Debug\netcoreapp3.1\Anniversary.Common.dll
+F:\UNI-APP\Anniversary.core\Anniversary.Common\bin\Debug\netcoreapp3.1\Anniversary.Common.pdb
+F:\UNI-APP\Anniversary.core\Anniversary.Common\obj\Debug\netcoreapp3.1\Anniversary.Common.AssemblyInfoInputs.cache
+F:\UNI-APP\Anniversary.core\Anniversary.Common\obj\Debug\netcoreapp3.1\Anniversary.Common.AssemblyInfo.cs
+F:\UNI-APP\Anniversary.core\Anniversary.Common\obj\Debug\netcoreapp3.1\Anniversary.Common.dll
+F:\UNI-APP\Anniversary.core\Anniversary.Common\obj\Debug\netcoreapp3.1\Anniversary.Common.pdb
+F:\UNI-APP\Anniversary.core\Anniversary.Common\obj\Debug\netcoreapp3.1\Anniversary.Common.csprojAssemblyReference.cache

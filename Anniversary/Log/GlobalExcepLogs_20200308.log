@@ -1,0 +1,8 @@
+2020-03-08 10:50:56,291| 
+Error occured seeding the Database.
+One or more errors occurred. (Duplicate entry '0' for key 'infodetail.PRIMARY')
+--------------------------------
+2020-03-08 16:16:37,326| 
+Error occured seeding the Database.
+One or more errors occurred. (Duplicate entry '0' for key 'infodetail.PRIMARY')
+--------------------------------
