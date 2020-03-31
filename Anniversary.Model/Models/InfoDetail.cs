@@ -35,6 +35,6 @@ namespace Anniversary.Model.Models
         /// InfoTitle
         /// </summary>
         [SugarColumn(IsNullable = false)]
-        public string InfoTitle { get; set; }
+        public string Type { get; set; }
     }
 }
