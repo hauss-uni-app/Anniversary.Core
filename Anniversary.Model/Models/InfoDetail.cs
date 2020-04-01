@@ -29,7 +29,7 @@ namespace Anniversary.Model.Models
         /// Days
         /// </summary>
         [SugarColumn(IsNullable = false)]
-        public Int64 Days { get; set; }
+        public Int64 Count { get; set; }
 
         /// <summary>
         /// InfoTitle

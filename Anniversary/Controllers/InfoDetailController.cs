@@ -31,7 +31,7 @@ namespace Anniversary.Controllers
 
         [HttpPost]
         [AllowAnonymous]
-        public async Task<MessageModel<List<AllData>>> Post(string openId, int infoId, int addCount, string infoTitle)
+        public async Task<MessageModel<List<AllData>>> Post(string openId, int infoId, int addCount, string type)
         {
             try
             {
@@ -39,41 +39,40 @@ namespace Anniversary.Controllers
 
                 var data = new MessageModel<List<AllData>>();
 
-                User user = (await _userServices.Query(q => q.OpenId == openId)).FirstOrDefault();
-
-                if (user != null)
+                if (addCount != 0)
                 {
-                    user.Version += 1;
+                    User user = (await _userServices.Query(q => q.OpenId == openId)).FirstOrDefault();
 
-                    var infoDetailInitail = (await _infoDetailServices.Query(q => q.InfoId == infoId && q.Days == 0)).FirstOrDefault();
-
-
-                    InfoDetail infoDetail = new InfoDetail()
+                    if (user != null)
                     {
-                        InfoId = infoId,
-                        Date = infoDetailInitail.Date,
-                        Days = 0,
-                        InfoTitle = infoTitle
-                    };
+                        user.Version += 1;
 
-                    var infoDetailId = (await _infoDetailServices.Add(infoDetail));
+                        InfoDetail infoDetailInitail = (await _infoDetailServices.Query(q => q.InfoId == infoId && q.Count == 0 && q.Type == "日")).FirstOrDefault();
 
-                    if (infoDetailId > 0)
-                    {
+                        if (infoDetailInitail != null)
+                        {
+                            InfoDetail infoDetail = new InfoDetail()
+                            {
+                                InfoId = infoId,
+                                Type = type,
+                                Count = addCount,
+                                Date = GetDate(infoDetailInitail.Date.Value, addCount, type)
+                            };
 
-                        if (await _userServices.Update(user) && infoDetailId > 0)
-                            data.success = true;
-                    }
+                            if (await _userServices.Update(user) && await _infoDetailServices.Add(infoDetail) > 0)
+                                data.success = true;
 
-                    if (data.success)
-                    {
-                        data.response = (await userController.Get(openId)).response;
-                        data.msg = "添加成功";
-                        _userServices.GetAdo().CommitTran();
-                    }
-                    else
-                    {
-                        _userServices.GetAdo().RollbackTran();
+                            if (data.success)
+                            {
+                                data.response = (await userController.Get(openId)).response;
+                                data.msg = "添加成功";
+                                _userServices.GetAdo().CommitTran();
+                            }
+                            else
+                            {
+                                _userServices.GetAdo().RollbackTran();
+                            }
+                        }
                     }
                 }
                 return data;
@@ -89,7 +88,7 @@ namespace Anniversary.Controllers
         [HttpPut]
         [AllowAnonymous]
         //[Route("Update")]
-        public async Task<MessageModel<List<AllData>>> Put(string openId, string infoDetailId, string name, DateTime? date)
+        public async Task<MessageModel<List<AllData>>> Put(string openId, int infoId, string infoDetailId, int addCount, string type)
         {
             try
             {
@@ -97,7 +96,7 @@ namespace Anniversary.Controllers
 
                 var data = new MessageModel<List<AllData>>();
 
-                if (!string.IsNullOrEmpty(name) || date != null)
+                if (addCount != 0)
                 {
                     User user = (await _userServices.Query(q => q.OpenId == openId)).FirstOrDefault();
 
@@ -105,63 +104,32 @@ namespace Anniversary.Controllers
                     {
                         user.Version += 1;
 
-                        Info info = (await _infoServices.QueryById(infoId));
+                        InfoDetail infoDetail = (await _infoDetailServices.QueryById(infoDetailId));
 
-                        if (info != null)
+                        InfoDetail infoDetailInitail = (await _infoDetailServices.Query(q => q.InfoId == infoId && q.Count == 0 && q.Type == "日")).FirstOrDefault();
+
+                        if (infoDetail != null && infoDetailInitail != null)
                         {
-                            if (!string.IsNullOrEmpty(name))
+                            infoDetail.Count = addCount;
+                            infoDetail.Type = type;
+                            infoDetail.Date = GetDate(infoDetailInitail.Date.Value, addCount, type);
+
+                            if (await _userServices.Update(user) && await _infoDetailServices.Update(infoDetail))
+                                data.success = true;
+
+                            if (data.success)
                             {
-                                info.Name = name;
+                                data.response = (await userController.Get(openId)).response;
+                                data.msg = "添加成功";
+                                _userServices.GetAdo().CommitTran();
                             }
-                            if (await _userServices.Update(user) && await _infoServices.Update(info))
+                            else
                             {
-                                if (date != null)
-                                {
-                                    InfoDetail infoDetail = (await _infoDetailServices.Query(q => q.InfoId.ToString() == infoId && q.Days == 0)).FirstOrDefault();
-
-                                    if (infoDetail != null)
-                                    {
-                                        infoDetail.Date = date;
-
-                                        if (await _infoDetailServices.Update(infoDetail))
-                                        {
-                                            List<InfoDetail> infoDetails = (await _infoDetailServices.Query(q => q.InfoId.ToString() == infoId && q.Days != 0)).ToList();
-
-                                            if (infoDetails.Count > 0)
-                                            {
-                                                foreach (InfoDetail infoDetail1 in infoDetails)
-                                                {
-                                                    infoDetail1.Date = date.Value.AddDays(infoDetail1.Days);
-                                                }
-
-                                                if (await _infoDetailServices.Update(infoDetails))
-                                                    data.success = true;
-                                            }
-                                            else
-                                            {
-                                                data.success = true;
-                                            }
-                                        }
-                                    }
-                                }
-                                else
-                                {
-                                    data.success = true;
-                                }
+                                _userServices.GetAdo().RollbackTran();
                             }
-                        }
-
-                        if (data.success)
-                        {
-                            data.response = (await userController.Get(openId)).response;
-                            data.msg = "更新成功";
-                            _userServices.GetAdo().CommitTran();
-                        }
-                        else
-                        {
-                            _userServices.GetAdo().RollbackTran();
                         }
                     }
+
                 }
                 return data;
             }
@@ -169,6 +137,62 @@ namespace Anniversary.Controllers
             {
                 _userServices.GetAdo().RollbackTran();
                 throw ex;
+            }
+        }
+
+
+        [HttpDelete]
+        [AllowAnonymous]
+        public async Task<MessageModel<List<AllData>>> Delete(string openId, int infoDetailId)
+        {
+            try
+            {
+                _userServices.GetAdo().BeginTran();
+
+                var data = new MessageModel<List<AllData>>();
+
+                User user = (await _userServices.Query(q => q.OpenId == openId)).FirstOrDefault();
+
+                if (user != null)
+                {
+                    user.Version += 1;
+
+                    if (await _userServices.Update(user) && await _infoServices.DeleteById(infoDetailId))
+                        data.success = true;
+
+                    if (data.success)
+                    {
+                        data.response = (await userController.Get(openId)).response;
+                        data.msg = "删除成功";
+                        _userServices.GetAdo().CommitTran();
+                    }
+                    else
+                    {
+                        _userServices.GetAdo().RollbackTran();
+                    }
+                }
+
+                return data;
+            }
+            catch (Exception ex)
+            {
+                _userServices.GetAdo().RollbackTran();
+                throw ex;
+            }
+        }
+
+        private DateTime? GetDate(DateTime innitailDate, int addCount, string type)
+        {
+            switch (type)
+            {
+                case "年":
+                    return innitailDate.AddYears(addCount);
+                case "月":
+                    return innitailDate.AddMonths(addCount);
+                case "日":
+                    return innitailDate.AddDays(addCount);
+                default:
+                    return null;
             }
         }
 

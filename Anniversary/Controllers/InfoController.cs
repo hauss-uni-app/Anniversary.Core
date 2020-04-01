@@ -58,7 +58,7 @@ namespace Anniversary.Controllers
                         {
                             InfoId = infoId,
                             Date = date,
-                            Days = 0,
+                            Count = 0,
                             Type = "天"
                         };
 
@@ -119,7 +119,7 @@ namespace Anniversary.Controllers
                             {
                                 if (date != null)
                                 {
-                                    InfoDetail infoDetail = (await _infoDetailServices.Query(q => q.InfoId.ToString() == infoId && q.Days == 0)).FirstOrDefault();
+                                    InfoDetail infoDetail = (await _infoDetailServices.Query(q => q.InfoId.ToString() == infoId && q.Count == 0 && q.Type == "日")).FirstOrDefault();
 
                                     if (infoDetail != null)
                                     {
@@ -127,13 +127,13 @@ namespace Anniversary.Controllers
 
                                         if (await _infoDetailServices.Update(infoDetail))
                                         {
-                                            List<InfoDetail> infoDetails = (await _infoDetailServices.Query(q => q.InfoId.ToString() == infoId && q.Days != 0)).ToList();
+                                            List<InfoDetail> infoDetails = (await _infoDetailServices.Query(q => q.InfoId.ToString() == infoId && q.Count != 0 && q.Type != "日")).ToList();
 
                                             if (infoDetails.Count > 0)
                                             {
                                                 foreach (InfoDetail infoDetail1 in infoDetails)
                                                 {
-                                                    infoDetail1.Date = date.Value.AddDays(infoDetail1.Days);
+                                                    infoDetail1.Date = date.Value.AddDays(infoDetail1.Count);
                                                 }
 
                                                 if (await _infoDetailServices.Update(infoDetails))

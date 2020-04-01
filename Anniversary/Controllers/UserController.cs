@@ -18,6 +18,7 @@ namespace Anniversary.Controllers
         readonly IUserServices _userServices;
         readonly IInfoServices _infoServices;
         readonly IInfoDetailServices _infoDetailServices;
+
         public UserController(IUserServices userServices, IInfoServices infoServices, IInfoDetailServices infoDetailServices)
         {
             _userServices = userServices;
