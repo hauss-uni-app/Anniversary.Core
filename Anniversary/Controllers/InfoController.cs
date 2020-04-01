@@ -59,7 +59,7 @@ namespace Anniversary.Controllers
                             InfoId = infoId,
                             Date = date,
                             Count = 0,
-                            Type = "天"
+                            Type = "日"
                         };
 
                         var infoDetailId = (await _infoDetailServices.Add(infoDetail));
