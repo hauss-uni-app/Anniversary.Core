@@ -85,6 +85,26 @@ namespace Anniversary.Controllers
             };
         }
 
+        [HttpGet]
+        [AllowAnonymous]
+        [Route("Version")]
+        public async Task<MessageModel<int>> GetVersion(string openId = "123456")
+        {
+            int responseVersion = -1;
 
+            if (!string.IsNullOrEmpty(openId))
+            {
+                User user = (await _userServices.Query(q => q.OpenId == openId)).FirstOrDefault();
+                if (user != null)
+                    responseVersion = user.Version;
+            }
+
+            return new MessageModel<int>()
+            {
+                msg = "获取成功",
+                success = responseVersion >= 0,
+                response = responseVersion
+            };
+        }
     }
 }
