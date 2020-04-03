@@ -11,64 +11,64 @@
   </PropertyGroup>
   <ItemGroup>
     <File Include="Anniversary.Common.dll">
-      <publishTime>03/15/2020 11:17:38</publishTime>
+      <publishTime>04/03/2020 15:17:23</publishTime>
     </File>
     <File Include="Anniversary.Common.pdb">
-      <publishTime>03/15/2020 11:17:38</publishTime>
+      <publishTime>04/03/2020 15:17:23</publishTime>
     </File>
     <File Include="Anniversary.deps.json">
-      <publishTime>03/15/2020 12:06:33</publishTime>
+      <publishTime>04/03/2020 16:52:10</publishTime>
     </File>
     <File Include="Anniversary.dll">
-      <publishTime>03/15/2020 12:06:32</publishTime>
+      <publishTime>04/03/2020 16:52:09</publishTime>
     </File>
     <File Include="Anniversary.exe">
-      <publishTime>03/15/2020 12:06:33</publishTime>
+      <publishTime>04/03/2020 16:52:09</publishTime>
     </File>
     <File Include="Anniversary.IRepository.dll">
-      <publishTime>03/15/2020 11:17:40</publishTime>
+      <publishTime>04/03/2020 15:17:24</publishTime>
     </File>
     <File Include="Anniversary.IRepository.pdb">
-      <publishTime>03/15/2020 11:17:40</publishTime>
+      <publishTime>04/03/2020 15:17:24</publishTime>
     </File>
     <File Include="Anniversary.IServices.dll">
-      <publishTime>03/15/2020 11:17:39</publishTime>
+      <publishTime>04/03/2020 15:17:24</publishTime>
     </File>
     <File Include="Anniversary.IServices.pdb">
-      <publishTime>03/15/2020 11:17:39</publishTime>
+      <publishTime>04/03/2020 15:17:24</publishTime>
     </File>
     <File Include="Anniversary.Model.dll">
-      <publishTime>03/15/2020 11:17:39</publishTime>
+      <publishTime>04/03/2020 15:17:23</publishTime>
     </File>
     <File Include="Anniversary.Model.pdb">
-      <publishTime>03/15/2020 11:17:39</publishTime>
+      <publishTime>04/03/2020 15:17:23</publishTime>
     </File>
     <File Include="Anniversary.pdb">
-      <publishTime>03/15/2020 12:06:32</publishTime>
+      <publishTime>04/03/2020 16:52:09</publishTime>
     </File>
     <File Include="Anniversary.Repository.dll">
-      <publishTime>03/15/2020 11:17:40</publishTime>
+      <publishTime>04/03/2020 15:17:24</publishTime>
     </File>
     <File Include="Anniversary.Repository.pdb">
-      <publishTime>03/15/2020 11:17:40</publishTime>
+      <publishTime>04/03/2020 15:17:24</publishTime>
     </File>
     <File Include="Anniversary.runtimeconfig.json">
-      <publishTime>03/15/2020 11:17:43</publishTime>
+      <publishTime>04/03/2020 15:17:25</publishTime>
     </File>
     <File Include="Anniversary.Services.dll">
-      <publishTime>03/15/2020 11:17:41</publishTime>
+      <publishTime>04/03/2020 15:17:24</publishTime>
     </File>
     <File Include="Anniversary.Services.pdb">
-      <publishTime>03/15/2020 11:17:41</publishTime>
+      <publishTime>04/03/2020 15:17:24</publishTime>
     </File>
     <File Include="Anniversary.xml">
-      <publishTime>03/15/2020 12:06:32</publishTime>
+      <publishTime>04/03/2020 16:52:09</publishTime>
     </File>
     <File Include="appsettings.Development.json">
-      <publishTime>02/05/2020 16:15:31</publishTime>
+      <publishTime>03/27/2020 14:30:50</publishTime>
     </File>
     <File Include="appsettings.json">
-      <publishTime>03/15/2020 11:20:55</publishTime>
+      <publishTime>04/03/2020 16:51:40</publishTime>
     </File>
     <File Include="Autofac.dll">
       <publishTime>02/12/2020 13:19:12</publishTime>
@@ -85,11 +85,14 @@
     <File Include="Castle.Core.dll">
       <publishTime>04/05/2019 01:50:28</publishTime>
     </File>
+    <File Include="Dockerfile">
+      <publishTime>04/03/2020 15:12:48</publishTime>
+    </File>
     <File Include="Google.Protobuf.dll">
       <publishTime>12/21/2017 20:23:44</publishTime>
     </File>
     <File Include="Log4net.config">
-      <publishTime>02/06/2020 08:40:07</publishTime>
+      <publishTime>03/27/2020 14:30:50</publishTime>
     </File>
     <File Include="log4net.dll">
       <publishTime>03/08/2017 19:26:22</publishTime>
@@ -182,19 +185,19 @@
       <publishTime>07/19/2017 10:01:32</publishTime>
     </File>
     <File Include="runtimes/win-arm64/native/sni.dll">
-      <publishTime>07/12/2017 11:24:24</publishTime>
+      <publishTime>03/05/2020 10:44:33</publishTime>
     </File>
     <File Include="runtimes/win-x64/native/e_sqlite3.dll">
       <publishTime>12/18/2018 15:01:12</publishTime>
     </File>
     <File Include="runtimes/win-x64/native/sni.dll">
-      <publishTime>07/12/2017 11:24:22</publishTime>
+      <publishTime>03/05/2020 10:44:33</publishTime>
     </File>
     <File Include="runtimes/win-x86/native/e_sqlite3.dll">
       <publishTime>12/18/2018 15:01:12</publishTime>
     </File>
     <File Include="runtimes/win-x86/native/sni.dll">
-      <publishTime>07/12/2017 11:24:22</publishTime>
+      <publishTime>03/05/2020 10:44:33</publishTime>
     </File>
     <File Include="runtimes/win/lib/netstandard2.0/System.Data.SqlClient.dll">
       <publishTime>07/19/2017 10:01:32</publishTime>
@@ -239,7 +242,7 @@
       <publishTime>07/19/2017 10:01:34</publishTime>
     </File>
     <File Include="web.config">
-      <publishTime>03/15/2020 12:07:10</publishTime>
+      <publishTime>04/03/2020 16:52:10</publishTime>
     </File>
   </ItemGroup>
 </Project>

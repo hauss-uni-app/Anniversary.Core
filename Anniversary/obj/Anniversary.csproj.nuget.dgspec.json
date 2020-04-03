@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "F:\\UNI-APP\\Anniversary.core\\Anniversary\\Anniversary.csproj": {}
+    "F:\\Study\\uni-app\\Anniversary.Core\\Anniversary\\Anniversary.csproj": {}
   },
   "projects": {
-    "F:\\UNI-APP\\Anniversary.core\\Anniversary.Common\\Anniversary.Common.csproj": {
+    "F:\\Study\\uni-app\\Anniversary.Core\\Anniversary.Common\\Anniversary.Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\UNI-APP\\Anniversary.core\\Anniversary.Common\\Anniversary.Common.csproj",
+        "projectUniqueName": "F:\\Study\\uni-app\\Anniversary.Core\\Anniversary.Common\\Anniversary.Common.csproj",
         "projectName": "Anniversary.Common",
-        "projectPath": "F:\\UNI-APP\\Anniversary.core\\Anniversary.Common\\Anniversary.Common.csproj",
-        "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "F:\\UNI-APP\\Anniversary.core\\Anniversary.Common\\obj\\",
+        "projectPath": "F:\\Study\\uni-app\\Anniversary.Core\\Anniversary.Common\\Anniversary.Common.csproj",
+        "packagesPath": "C:\\Users\\Shli\\.nuget\\packages\\",
+        "outputPath": "F:\\Study\\uni-app\\Anniversary.Core\\Anniversary.Common\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Shli\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -66,17 +69,20 @@
         }
       }
     },
-    "F:\\UNI-APP\\Anniversary.core\\Anniversary.IRepository\\Anniversary.IRepository.csproj": {
+    "F:\\Study\\uni-app\\Anniversary.Core\\Anniversary.IRepository\\Anniversary.IRepository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\UNI-APP\\Anniversary.core\\Anniversary.IRepository\\Anniversary.IRepository.csproj",
+        "projectUniqueName": "F:\\Study\\uni-app\\Anniversary.Core\\Anniversary.IRepository\\Anniversary.IRepository.csproj",
         "projectName": "Anniversary.IRepository",
-        "projectPath": "F:\\UNI-APP\\Anniversary.core\\Anniversary.IRepository\\Anniversary.IRepository.csproj",
-        "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "F:\\UNI-APP\\Anniversary.core\\Anniversary.IRepository\\obj\\",
+        "projectPath": "F:\\Study\\uni-app\\Anniversary.Core\\Anniversary.IRepository\\Anniversary.IRepository.csproj",
+        "packagesPath": "C:\\Users\\Shli\\.nuget\\packages\\",
+        "outputPath": "F:\\Study\\uni-app\\Anniversary.Core\\Anniversary.IRepository\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Shli\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -89,8 +95,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "F:\\UNI-APP\\Anniversary.core\\Anniversary.Model\\Anniversary.Model.csproj": {
-                "projectPath": "F:\\UNI-APP\\Anniversary.core\\Anniversary.Model\\Anniversary.Model.csproj"
+              "F:\\Study\\uni-app\\Anniversary.Core\\Anniversary.Model\\Anniversary.Model.csproj": {
+                "projectPath": "F:\\Study\\uni-app\\Anniversary.Core\\Anniversary.Model\\Anniversary.Model.csproj"
               }
             }
           }
@@ -122,17 +128,20 @@
         }
       }
     },
-    "F:\\UNI-APP\\Anniversary.core\\Anniversary.IServices\\Anniversary.IServices.csproj": {
+    "F:\\Study\\uni-app\\Anniversary.Core\\Anniversary.IServices\\Anniversary.IServices.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\UNI-APP\\Anniversary.core\\Anniversary.IServices\\Anniversary.IServices.csproj",
+        "projectUniqueName": "F:\\Study\\uni-app\\Anniversary.Core\\Anniversary.IServices\\Anniversary.IServices.csproj",
         "projectName": "Anniversary.IServices",
-        "projectPath": "F:\\UNI-APP\\Anniversary.core\\Anniversary.IServices\\Anniversary.IServices.csproj",
-        "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "F:\\UNI-APP\\Anniversary.core\\Anniversary.IServices\\obj\\",
+        "projectPath": "F:\\Study\\uni-app\\Anniversary.Core\\Anniversary.IServices\\Anniversary.IServices.csproj",
+        "packagesPath": "C:\\Users\\Shli\\.nuget\\packages\\",
+        "outputPath": "F:\\Study\\uni-app\\Anniversary.Core\\Anniversary.IServices\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Shli\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -145,8 +154,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "F:\\UNI-APP\\Anniversary.core\\Anniversary.Model\\Anniversary.Model.csproj": {
-                "projectPath": "F:\\UNI-APP\\Anniversary.core\\Anniversary.Model\\Anniversary.Model.csproj"
+              "F:\\Study\\uni-app\\Anniversary.Core\\Anniversary.Model\\Anniversary.Model.csproj": {
+                "projectPath": "F:\\Study\\uni-app\\Anniversary.Core\\Anniversary.Model\\Anniversary.Model.csproj"
               }
             }
           }
@@ -178,17 +187,20 @@
         }
       }
     },
-    "F:\\UNI-APP\\Anniversary.core\\Anniversary.Model\\Anniversary.Model.csproj": {
+    "F:\\Study\\uni-app\\Anniversary.Core\\Anniversary.Model\\Anniversary.Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\UNI-APP\\Anniversary.core\\Anniversary.Model\\Anniversary.Model.csproj",
+        "projectUniqueName": "F:\\Study\\uni-app\\Anniversary.Core\\Anniversary.Model\\Anniversary.Model.csproj",
         "projectName": "Anniversary.Model",
-        "projectPath": "F:\\UNI-APP\\Anniversary.core\\Anniversary.Model\\Anniversary.Model.csproj",
-        "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "F:\\UNI-APP\\Anniversary.core\\Anniversary.Model\\obj\\",
+        "projectPath": "F:\\Study\\uni-app\\Anniversary.Core\\Anniversary.Model\\Anniversary.Model.csproj",
+        "packagesPath": "C:\\Users\\Shli\\.nuget\\packages\\",
+        "outputPath": "F:\\Study\\uni-app\\Anniversary.Core\\Anniversary.Model\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Shli\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -201,8 +213,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "F:\\UNI-APP\\Anniversary.core\\Anniversary.Common\\Anniversary.Common.csproj": {
-                "projectPath": "F:\\UNI-APP\\Anniversary.core\\Anniversary.Common\\Anniversary.Common.csproj"
+              "F:\\Study\\uni-app\\Anniversary.Core\\Anniversary.Common\\Anniversary.Common.csproj": {
+                "projectPath": "F:\\Study\\uni-app\\Anniversary.Core\\Anniversary.Common\\Anniversary.Common.csproj"
               }
             }
           }
@@ -240,17 +252,20 @@
         }
       }
     },
-    "F:\\UNI-APP\\Anniversary.core\\Anniversary.Repository\\Anniversary.Repository.csproj": {
+    "F:\\Study\\uni-app\\Anniversary.Core\\Anniversary.Repository\\Anniversary.Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\UNI-APP\\Anniversary.core\\Anniversary.Repository\\Anniversary.Repository.csproj",
+        "projectUniqueName": "F:\\Study\\uni-app\\Anniversary.Core\\Anniversary.Repository\\Anniversary.Repository.csproj",
         "projectName": "Anniversary.Repository",
-        "projectPath": "F:\\UNI-APP\\Anniversary.core\\Anniversary.Repository\\Anniversary.Repository.csproj",
-        "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "F:\\UNI-APP\\Anniversary.core\\Anniversary.Repository\\obj\\",
+        "projectPath": "F:\\Study\\uni-app\\Anniversary.Core\\Anniversary.Repository\\Anniversary.Repository.csproj",
+        "packagesPath": "C:\\Users\\Shli\\.nuget\\packages\\",
+        "outputPath": "F:\\Study\\uni-app\\Anniversary.Core\\Anniversary.Repository\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Shli\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -263,11 +278,11 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "F:\\UNI-APP\\Anniversary.core\\Anniversary.Common\\Anniversary.Common.csproj": {
-                "projectPath": "F:\\UNI-APP\\Anniversary.core\\Anniversary.Common\\Anniversary.Common.csproj"
+              "F:\\Study\\uni-app\\Anniversary.Core\\Anniversary.Common\\Anniversary.Common.csproj": {
+                "projectPath": "F:\\Study\\uni-app\\Anniversary.Core\\Anniversary.Common\\Anniversary.Common.csproj"
               },
-              "F:\\UNI-APP\\Anniversary.core\\Anniversary.IRepository\\Anniversary.IRepository.csproj": {
-                "projectPath": "F:\\UNI-APP\\Anniversary.core\\Anniversary.IRepository\\Anniversary.IRepository.csproj"
+              "F:\\Study\\uni-app\\Anniversary.Core\\Anniversary.IRepository\\Anniversary.IRepository.csproj": {
+                "projectPath": "F:\\Study\\uni-app\\Anniversary.Core\\Anniversary.IRepository\\Anniversary.IRepository.csproj"
               }
             }
           }
@@ -309,17 +324,20 @@
         }
       }
     },
-    "F:\\UNI-APP\\Anniversary.core\\Anniversary.Services\\Anniversary.Services.csproj": {
+    "F:\\Study\\uni-app\\Anniversary.Core\\Anniversary.Services\\Anniversary.Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\UNI-APP\\Anniversary.core\\Anniversary.Services\\Anniversary.Services.csproj",
+        "projectUniqueName": "F:\\Study\\uni-app\\Anniversary.Core\\Anniversary.Services\\Anniversary.Services.csproj",
         "projectName": "Anniversary.Services",
-        "projectPath": "F:\\UNI-APP\\Anniversary.core\\Anniversary.Services\\Anniversary.Services.csproj",
-        "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "F:\\UNI-APP\\Anniversary.core\\Anniversary.Services\\obj\\",
+        "projectPath": "F:\\Study\\uni-app\\Anniversary.Core\\Anniversary.Services\\Anniversary.Services.csproj",
+        "packagesPath": "C:\\Users\\Shli\\.nuget\\packages\\",
+        "outputPath": "F:\\Study\\uni-app\\Anniversary.Core\\Anniversary.Services\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Shli\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -332,14 +350,14 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "F:\\UNI-APP\\Anniversary.core\\Anniversary.IRepository\\Anniversary.IRepository.csproj": {
-                "projectPath": "F:\\UNI-APP\\Anniversary.core\\Anniversary.IRepository\\Anniversary.IRepository.csproj"
+              "F:\\Study\\uni-app\\Anniversary.Core\\Anniversary.IRepository\\Anniversary.IRepository.csproj": {
+                "projectPath": "F:\\Study\\uni-app\\Anniversary.Core\\Anniversary.IRepository\\Anniversary.IRepository.csproj"
               },
-              "F:\\UNI-APP\\Anniversary.core\\Anniversary.IServices\\Anniversary.IServices.csproj": {
-                "projectPath": "F:\\UNI-APP\\Anniversary.core\\Anniversary.IServices\\Anniversary.IServices.csproj"
+              "F:\\Study\\uni-app\\Anniversary.Core\\Anniversary.IServices\\Anniversary.IServices.csproj": {
+                "projectPath": "F:\\Study\\uni-app\\Anniversary.Core\\Anniversary.IServices\\Anniversary.IServices.csproj"
               },
-              "F:\\UNI-APP\\Anniversary.core\\Anniversary.Model\\Anniversary.Model.csproj": {
-                "projectPath": "F:\\UNI-APP\\Anniversary.core\\Anniversary.Model\\Anniversary.Model.csproj"
+              "F:\\Study\\uni-app\\Anniversary.Core\\Anniversary.Model\\Anniversary.Model.csproj": {
+                "projectPath": "F:\\Study\\uni-app\\Anniversary.Core\\Anniversary.Model\\Anniversary.Model.csproj"
               }
             }
           }
@@ -371,17 +389,20 @@
         }
       }
     },
-    "F:\\UNI-APP\\Anniversary.core\\Anniversary\\Anniversary.csproj": {
+    "F:\\Study\\uni-app\\Anniversary.Core\\Anniversary\\Anniversary.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\UNI-APP\\Anniversary.core\\Anniversary\\Anniversary.csproj",
+        "projectUniqueName": "F:\\Study\\uni-app\\Anniversary.Core\\Anniversary\\Anniversary.csproj",
         "projectName": "Anniversary",
-        "projectPath": "F:\\UNI-APP\\Anniversary.core\\Anniversary\\Anniversary.csproj",
-        "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "F:\\UNI-APP\\Anniversary.core\\Anniversary\\obj\\",
+        "projectPath": "F:\\Study\\uni-app\\Anniversary.Core\\Anniversary\\Anniversary.csproj",
+        "packagesPath": "C:\\Users\\Shli\\.nuget\\packages\\",
+        "outputPath": "F:\\Study\\uni-app\\Anniversary.Core\\Anniversary\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Shli\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -394,20 +415,20 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "F:\\UNI-APP\\Anniversary.core\\Anniversary.Common\\Anniversary.Common.csproj": {
-                "projectPath": "F:\\UNI-APP\\Anniversary.core\\Anniversary.Common\\Anniversary.Common.csproj"
+              "F:\\Study\\uni-app\\Anniversary.Core\\Anniversary.Common\\Anniversary.Common.csproj": {
+                "projectPath": "F:\\Study\\uni-app\\Anniversary.Core\\Anniversary.Common\\Anniversary.Common.csproj"
               },
-              "F:\\UNI-APP\\Anniversary.core\\Anniversary.IRepository\\Anniversary.IRepository.csproj": {
-                "projectPath": "F:\\UNI-APP\\Anniversary.core\\Anniversary.IRepository\\Anniversary.IRepository.csproj"
+              "F:\\Study\\uni-app\\Anniversary.Core\\Anniversary.IRepository\\Anniversary.IRepository.csproj": {
+                "projectPath": "F:\\Study\\uni-app\\Anniversary.Core\\Anniversary.IRepository\\Anniversary.IRepository.csproj"
               },
-              "F:\\UNI-APP\\Anniversary.core\\Anniversary.IServices\\Anniversary.IServices.csproj": {
-                "projectPath": "F:\\UNI-APP\\Anniversary.core\\Anniversary.IServices\\Anniversary.IServices.csproj"
+              "F:\\Study\\uni-app\\Anniversary.Core\\Anniversary.IServices\\Anniversary.IServices.csproj": {
+                "projectPath": "F:\\Study\\uni-app\\Anniversary.Core\\Anniversary.IServices\\Anniversary.IServices.csproj"
               },
-              "F:\\UNI-APP\\Anniversary.core\\Anniversary.Repository\\Anniversary.Repository.csproj": {
-                "projectPath": "F:\\UNI-APP\\Anniversary.core\\Anniversary.Repository\\Anniversary.Repository.csproj"
+              "F:\\Study\\uni-app\\Anniversary.Core\\Anniversary.Repository\\Anniversary.Repository.csproj": {
+                "projectPath": "F:\\Study\\uni-app\\Anniversary.Core\\Anniversary.Repository\\Anniversary.Repository.csproj"
               },
-              "F:\\UNI-APP\\Anniversary.core\\Anniversary.Services\\Anniversary.Services.csproj": {
-                "projectPath": "F:\\UNI-APP\\Anniversary.core\\Anniversary.Services\\Anniversary.Services.csproj"
+              "F:\\Study\\uni-app\\Anniversary.Core\\Anniversary.Services\\Anniversary.Services.csproj": {
+                "projectPath": "F:\\Study\\uni-app\\Anniversary.Core\\Anniversary.Services\\Anniversary.Services.csproj"
               }
             }
           }

@@ -59,34 +59,34 @@ namespace Anniversary.Model.Seed
                 {
                     Console.WriteLine("Seeding database...");
 
-                    #region Info
-                    if (!await myContext.Db.Queryable<Info>().AnyAsync())
-                    {
-                        myContext.GetEntityDB<Info>().Insert(new Info() { InfoId = 0, Name = "initial data", OpenId = "initial data" });
-                    }
-                    else
-                    {
-                        Console.WriteLine("Table:Info already exists...");
-                    }
-                    #endregion
+                    //#region Info
+                    //if (!await myContext.Db.Queryable<Info>().AnyAsync())
+                    //{
+                    //    myContext.GetEntityDB<Info>().Insert(new Info() { InfoId = 0, Name = "initial data", OpenId = "initial data" });
+                    //}
+                    //else
+                    //{
+                    //    Console.WriteLine("Table:Info already exists...");
+                    //}
+                    //#endregion
 
-                    #region InfoDetail
-                    if (!await myContext.Db.Queryable<InfoDetail>().AnyAsync())
-                    {
-                        List<InfoDetail> infos = new List<InfoDetail>();
+                    //#region InfoDetail
+                    //if (!await myContext.Db.Queryable<InfoDetail>().AnyAsync())
+                    //{
+                    //    List<InfoDetail> infos = new List<InfoDetail>();
 
-                        for (int i = 0; i < 4; i++)
-                        {
-                            infos.Add(new InfoDetail() { InfoId = 0, Date = DateTime.Now.Date.AddDays(i * 100), Days = i * 100 });
-                        }
+                    //    for (int i = 0; i < 4; i++)
+                    //    {
+                    //        infos.Add(new InfoDetail() { InfoId = 0, Date = DateTime.Now.Date.AddDays(i * 100), Days = i * 100 });
+                    //    }
 
-                        myContext.GetEntityDB<InfoDetail>().InsertRange(infos);
-                    }
-                    else
-                    {
-                        Console.WriteLine("Table:InfoDetail already exists...");
-                    }
-                    #endregion
+                    //    myContext.GetEntityDB<InfoDetail>().InsertRange(infos);
+                    //}
+                    //else
+                    //{
+                    //    Console.WriteLine("Table:InfoDetail already exists...");
+                    //}
+                    //#endregion
 
                     Console.WriteLine("Done seeding database.");
                 }

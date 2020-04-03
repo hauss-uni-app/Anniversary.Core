@@ -78,6 +78,7 @@ namespace Anniversary
                         serverOptions.AllowSynchronousIO = true;//∆Ù”√Õ¨≤Ω IO
                     })
                     .UseStartup<Startup>()
+                    .UseUrls("http://*:12345")
                     .ConfigureLogging((hostingContext, builder) =>
                      {
                          builder.ClearProviders();

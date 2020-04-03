@@ -11,3 +11,16 @@ F:\UNI-APP\Anniversary.core\Anniversary.IRepository\obj\Release\netcoreapp3.1\An
 F:\UNI-APP\Anniversary.core\Anniversary.IRepository\obj\Release\netcoreapp3.1\Anniversary.IRepository.csproj.CopyComplete
 F:\UNI-APP\Anniversary.core\Anniversary.IRepository\obj\Release\netcoreapp3.1\Anniversary.IRepository.dll
 F:\UNI-APP\Anniversary.core\Anniversary.IRepository\obj\Release\netcoreapp3.1\Anniversary.IRepository.pdb
+F:\Study\uni-app\Anniversary.Core\Anniversary.IRepository\bin\Release\netcoreapp3.1\Anniversary.IRepository.deps.json
+F:\Study\uni-app\Anniversary.Core\Anniversary.IRepository\bin\Release\netcoreapp3.1\Anniversary.IRepository.dll
+F:\Study\uni-app\Anniversary.Core\Anniversary.IRepository\bin\Release\netcoreapp3.1\Anniversary.IRepository.pdb
+F:\Study\uni-app\Anniversary.Core\Anniversary.IRepository\bin\Release\netcoreapp3.1\Anniversary.Common.dll
+F:\Study\uni-app\Anniversary.Core\Anniversary.IRepository\bin\Release\netcoreapp3.1\Anniversary.Model.dll
+F:\Study\uni-app\Anniversary.Core\Anniversary.IRepository\bin\Release\netcoreapp3.1\Anniversary.Model.pdb
+F:\Study\uni-app\Anniversary.Core\Anniversary.IRepository\bin\Release\netcoreapp3.1\Anniversary.Common.pdb
+F:\Study\uni-app\Anniversary.Core\Anniversary.IRepository\obj\Release\netcoreapp3.1\Anniversary.IRepository.csprojAssemblyReference.cache
+F:\Study\uni-app\Anniversary.Core\Anniversary.IRepository\obj\Release\netcoreapp3.1\Anniversary.IRepository.AssemblyInfoInputs.cache
+F:\Study\uni-app\Anniversary.Core\Anniversary.IRepository\obj\Release\netcoreapp3.1\Anniversary.IRepository.AssemblyInfo.cs
+F:\Study\uni-app\Anniversary.Core\Anniversary.IRepository\obj\Release\netcoreapp3.1\Anniversary.IRepository.csproj.CopyComplete
+F:\Study\uni-app\Anniversary.Core\Anniversary.IRepository\obj\Release\netcoreapp3.1\Anniversary.IRepository.dll
+F:\Study\uni-app\Anniversary.Core\Anniversary.IRepository\obj\Release\netcoreapp3.1\Anniversary.IRepository.pdb
