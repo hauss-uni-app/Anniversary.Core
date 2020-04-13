@@ -157,7 +157,7 @@ namespace Anniversary.Controllers
                 {
                     user.Version += 1;
 
-                    if (await _userServices.Update(user) && await _infoServices.DeleteById(infoDetailId))
+                    if (await _userServices.Update(user) && await _infoDetailServices.DeleteById(infoDetailId))
                         data.success = true;
 
                     if (data.success)
