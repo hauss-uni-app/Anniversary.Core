@@ -55,14 +55,14 @@ namespace Anniversary
                     //TermsOfService = new Uri("https://example.com/terms"),
                     Contact = new OpenApiContact
                     {
-                        Name = "Hauss Li",
+                        Name = "‘¡ICP±∏20028382∫≈",
                         Email = string.Empty,
-                        Url = new Uri("https://twitter.com/spboyer"),
+                        Url = new Uri("http://www.beian.miit.gov.cn/"),
                     },
                     //License = new OpenApiLicense
                     //{
-                    //    Name = "Use under LICX",
-                    //    Url = new Uri("https://example.com/license"),
+                    //    Name = "‘¡ICP±∏20028382∫≈",
+                    //    Url = new Uri("www.beian.miit.gov.cn"),
                     //}
                 });
 
@@ -182,9 +182,9 @@ namespace Anniversary
                 endpoints.MapControllers();
             });
 
-            
+
         }
 
-        
+
     }
 }
