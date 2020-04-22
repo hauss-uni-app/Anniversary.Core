@@ -30,6 +30,7 @@ namespace Anniversary.OuterClient
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseLog4net();
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>

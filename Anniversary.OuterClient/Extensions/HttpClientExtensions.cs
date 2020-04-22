@@ -47,7 +47,7 @@ namespace Anniversary.OuterClient.Extensions
 
                     httpContent.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue(ContentType);
 
-                    response = await _client.PostAsync(actionUrl, httpContent);
+                    response = await _client.GetAsync(actionUrl, httpContent);
 
                 }
                 if (response != null && response.IsSuccessStatusCode)

@@ -28,6 +28,7 @@
     <ProjectReference Include="..\Anniversary.Common\Anniversary.Common.csproj" />
     <ProjectReference Include="..\Anniversary.IRepository\Anniversary.IRepository.csproj" />
     <ProjectReference Include="..\Anniversary.IServices\Anniversary.IServices.csproj" />
+    <ProjectReference Include="..\Anniversary.OuterClient\Anniversary.OuterClient.csproj" />
     <ProjectReference Include="..\Anniversary.Repository\Anniversary.Repository.csproj" />
     <ProjectReference Include="..\Anniversary.Services\Anniversary.Services.csproj" />
   </ItemGroup>

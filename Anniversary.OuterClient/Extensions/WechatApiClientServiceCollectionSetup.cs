@@ -14,7 +14,7 @@ namespace Anniversary.OuterClient.Extensions
         {
             services.AddHttpClient<IWechatApiClient, WechatApiClient>()
                     .ConfigureHttpClient(config => {
-                        config.BaseAddress = new Uri(Appsettings.app(new string[] { "Url" }));
+                        config.BaseAddress = new Uri(Appsettings.app(new string[] {"Wechat", "Url" }));
                         config.Timeout = TimeSpan.FromSeconds(30);
                     });
 

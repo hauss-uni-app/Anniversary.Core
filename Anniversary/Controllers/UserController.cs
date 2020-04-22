@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Anniversary.Common.Helper;
 using Anniversary.IServices;
 using Anniversary.Model;
 using Anniversary.Model.Models;
+using Anniversary.OuterClient;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SqlSugar;
@@ -18,13 +20,14 @@ namespace Anniversary.Controllers
         readonly IUserServices _userServices;
         readonly IInfoServices _infoServices;
         readonly IInfoDetailServices _infoDetailServices;
+        readonly IWechatApiClient _wechatApiClient;
 
-
-        public UserController(IUserServices userServices, IInfoServices infoServices, IInfoDetailServices infoDetailServices)
+        public UserController(IUserServices userServices, IInfoServices infoServices, IInfoDetailServices infoDetailServices, IWechatApiClient wechatApiClient = null)
         {
             _userServices = userServices;
             _infoServices = infoServices;
             _infoDetailServices = infoDetailServices;
+            _wechatApiClient = wechatApiClient;
         }
 
         /// <returns></returns>
@@ -118,9 +121,13 @@ namespace Anniversary.Controllers
         [HttpGet]
         [AllowAnonymous]
         [Route("GetOpenId")]
-        public async Task<MessageModel<string>> GetOpenId(string code)
-        { 
-            
+        public async Task<MessageModel<WeChatApi>> GetOpenId(string code)
+        {
+            MessageModel<WeChatApi> result = new MessageModel<WeChatApi>();
+
+            result = await _wechatApiClient.GetOpenIDAsync(Appsettings.app(new string[] { "Wechat", "AppID" }), Appsettings.app(new string[] { "Wechat", "AppSecret" }), code);
+
+            return result;
         }
 
         private async Task<List<AllData>> UserInitialAsync(string openId)

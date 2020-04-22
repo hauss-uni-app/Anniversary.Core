@@ -2,6 +2,7 @@
 using Anniversary.Model.Models;
 using Anniversary.OuterClient.Extensions;
 using Microsoft.Extensions.Logging;
+using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -10,12 +11,13 @@ namespace Anniversary.OuterClient
 {
     public class WechatApiClient: IWechatApiClient
     {
-        private ILogger _logger;
+        private readonly ILogger<WechatApiClient> _logger;
 
         public HttpClient _client { get; private set; }
 
-        public WechatApiClient(HttpClient httpClient)
+        public WechatApiClient(ILogger<WechatApiClient> logger, HttpClient httpClient)
         {
+            _logger = logger;
             _client = httpClient;
         }
 
@@ -25,45 +27,39 @@ namespace Anniversary.OuterClient
 
             string funName = "Get Wechat Data By Code";
 
-            var msgReq = new List<string>{
-                appid,
-                secret,
-                code
+            WeChatApiPara weChatApiPara = new WeChatApiPara() { 
+                
+                appid = appid,
+                secret = secret, 
+                js_code = code
             };
 
             try
             {
-                result = await HttpClientExtensions.PostData<MessageModel<WeChatApi>>(_client, _logger, "/sns/jscode2session", msgReq);
+               var wechatResponse = await HttpClientExtensions.PostData<WeChatApi>(_client, _logger, "/sns/jscode2session", weChatApiPara);
 
-                if (sendRet != null)
+                if (!string.IsNullOrEmpty(wechatResponse.openid ))
                 {
-                    _logger.LogInformation($"{funName},{hrcodeStr}推送消息成功");
-                    result.state = true;
-                    result.data = sendRet.Return_data.MessageId;
+                    _logger.LogInformation($"{funName},获取open - {wechatResponse.openid}");
+                    result.success = true;
+                    result.response = wechatResponse;
                 }
                 else
                 {
-                    result.state = false;
-                    result.error_msg = sendRet.Return_msg;
-                    _logger.LogError($"{funName}：{hrcodeStr}推送消息失败：{sendRet.Return_msg}");
+                    result.success = false;
+                    result.msg = "获取OpenId失败";
+                    _logger.LogError($"{funName}：获取OpenId失败");
                 }
 
             }
             catch (Exception ex)
             {
-                result.state = false;
-                result.error_code = ErrorCode.OuterApiError;
-                result.error_msg = funName + "调用外部接口异常：。" + ex.Message;
-                _logger.LogError(ex, (string)$"{funName}向{hrcodeStr}推送消息处理异常：{ex.Message}");
+                result.success = false;
+                result.msg = funName + "调用外部接口异常：。" + ex.Message;
+                _logger.LogError(ex, (string)$"{funName}调用外部接口异常：{ex.Message}");
             }
 
-
             return result;
-        }
-
-        Task<MessageModel<string>> IWechatApiClient.GetOpenIDAsync(string appid, string secret, string code)
-        {
-            throw new System.NotImplementedException();
         }
     }
 }

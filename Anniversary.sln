@@ -5,17 +5,19 @@ VisualStudioVersion = 16.0.29728.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Anniversary", "Anniversary\Anniversary.csproj", "{FBADD809-649B-4778-8668-6B98BF4797C2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Anniversary.Model", "Anniversary.Model\Anniversary.Model.csproj", "{3BF884C9-9DD4-45A9-9CBA-6C778EFAEED7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Anniversary.Model", "Anniversary.Model\Anniversary.Model.csproj", "{3BF884C9-9DD4-45A9-9CBA-6C778EFAEED7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Anniversary.IRepository", "Anniversary.IRepository\Anniversary.IRepository.csproj", "{C54034AE-4DA3-4F86-81C4-5E7DEF874CE7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Anniversary.IRepository", "Anniversary.IRepository\Anniversary.IRepository.csproj", "{C54034AE-4DA3-4F86-81C4-5E7DEF874CE7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Anniversary.Repository", "Anniversary.Repository\Anniversary.Repository.csproj", "{B0D23561-2DAA-4A2D-8546-E6C705863C89}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Anniversary.Repository", "Anniversary.Repository\Anniversary.Repository.csproj", "{B0D23561-2DAA-4A2D-8546-E6C705863C89}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Anniversary.Common", "Anniversary.Common\Anniversary.Common.csproj", "{2F1345B5-54E5-4FBE-B389-D4E5346AABB1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Anniversary.Common", "Anniversary.Common\Anniversary.Common.csproj", "{2F1345B5-54E5-4FBE-B389-D4E5346AABB1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Anniversary.IServices", "Anniversary.IServices\Anniversary.IServices.csproj", "{60330EB2-11A6-402A-B1B2-93C6DB1A5698}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Anniversary.IServices", "Anniversary.IServices\Anniversary.IServices.csproj", "{60330EB2-11A6-402A-B1B2-93C6DB1A5698}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Anniversary.Services", "Anniversary.Services\Anniversary.Services.csproj", "{3618371D-3FE9-4068-872C-B296358ECA64}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Anniversary.Services", "Anniversary.Services\Anniversary.Services.csproj", "{3618371D-3FE9-4068-872C-B296358ECA64}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Anniversary.OuterClient", "Anniversary.OuterClient\Anniversary.OuterClient.csproj", "{F19E3966-E5BF-4000-A78C-959E8A2DD043}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{3618371D-3FE9-4068-872C-B296358ECA64}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3618371D-3FE9-4068-872C-B296358ECA64}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3618371D-3FE9-4068-872C-B296358ECA64}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F19E3966-E5BF-4000-A78C-959E8A2DD043}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F19E3966-E5BF-4000-A78C-959E8A2DD043}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F19E3966-E5BF-4000-A78C-959E8A2DD043}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F19E3966-E5BF-4000-A78C-959E8A2DD043}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

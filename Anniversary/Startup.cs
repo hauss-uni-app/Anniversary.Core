@@ -6,6 +6,7 @@ using System.Reflection;
 using System.Threading.Tasks;
 using Anniversary.Common.Helper;
 using Anniversary.Extensions;
+using Anniversary.OuterClient.Extensions;
 using Autofac;
 using Autofac.Extras.DynamicProxy;
 using Microsoft.AspNetCore.Builder;
@@ -42,6 +43,8 @@ namespace Anniversary
             services.AddSqlsugarSetup();
             services.AddDbSetup();
             services.AddControllers();
+
+            services.AddWechatApiClient();
 
             // Register the Swagger generator, defining 1 or more Swagger documents
             services.AddSwaggerGen(c =>
