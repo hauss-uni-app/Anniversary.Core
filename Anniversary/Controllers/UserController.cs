@@ -115,6 +115,14 @@ namespace Anniversary.Controllers
             };
         }
 
+        [HttpGet]
+        [AllowAnonymous]
+        [Route("GetOpenId")]
+        public async Task<MessageModel<string>> GetOpenId(string code)
+        { 
+            
+        }
+
         private async Task<List<AllData>> UserInitialAsync(string openId)
         {
             try
