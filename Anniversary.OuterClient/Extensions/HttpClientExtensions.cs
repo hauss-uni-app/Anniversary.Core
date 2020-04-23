@@ -47,7 +47,7 @@ namespace Anniversary.OuterClient.Extensions
 
                     httpContent.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue(ContentType);
 
-                    response = await _client.GetAsync(actionUrl, httpContent);
+                    response = await _client.PostAsync(actionUrl, httpContent);
 
                 }
                 if (response != null && response.IsSuccessStatusCode)
@@ -60,7 +60,7 @@ namespace Anniversary.OuterClient.Extensions
                     }
                     else
                     {
-                        string respStr = response.Content.ReadAsStringAsync().Result;
+                        string respStr = await response.Content.ReadAsStringAsync();
                         T resp = JsonConvert.DeserializeObject<T>(respStr);
 
                         return resp;
@@ -79,6 +79,57 @@ namespace Anniversary.OuterClient.Extensions
             finally
             {
                 _logger.LogInformation($"{funName}结束，url={_client.BaseAddress},action={actionUrl},postData={paramStr} ,jrclientguid={jrclientguid}---------");
+            }
+
+        }
+
+        public async static Task<T> GetData<T>(HttpClient _client, ILogger _logger, string actionUrl, string BearerToken = "")
+        {
+            string funName = "PostData";
+
+            string jrclientguid = Guid.NewGuid().ToString("n");
+            try
+            {
+                _logger.LogInformation($"{funName}开始，url={_client.BaseAddress},action={actionUrl},jrclientguid={jrclientguid}---------");
+
+                HttpResponseMessage response;
+                if (!string.IsNullOrWhiteSpace(BearerToken))
+                {
+                    _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", BearerToken);
+                }
+
+                response = await _client.GetAsync(actionUrl);
+
+
+                if (response != null && response.IsSuccessStatusCode)
+                {
+                    Type t = typeof(T);
+                    if (typeof(T) == typeof(string))
+                    {
+                        string respStr = await response.Content.ReadAsStringAsync();
+                        return (T)Convert.ChangeType(respStr, typeof(T));
+                    }
+                    else
+                    {
+                        string respStr = await response.Content.ReadAsStringAsync();
+                        T resp = JsonConvert.DeserializeObject<T>(respStr);
+
+                        return resp;
+                    }
+                }
+                else
+                {
+                    return default(T);
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, $"{funName}报错，url={_client.BaseAddress},action={actionUrl},jrclientguid={jrclientguid}---,ex={ex.Message}");
+                throw;
+            }
+            finally
+            {
+                _logger.LogInformation($"{funName}结束，url={_client.BaseAddress},action={actionUrl},jrclientguid={jrclientguid}---------");
             }
 
         }

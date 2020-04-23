@@ -27,21 +27,17 @@ namespace Anniversary.OuterClient
 
             string funName = "Get Wechat Data By Code";
 
-            WeChatApiPara weChatApiPara = new WeChatApiPara() { 
-                
-                appid = appid,
-                secret = secret, 
-                js_code = code
-            };
-
             try
             {
-               var wechatResponse = await HttpClientExtensions.PostData<WeChatApi>(_client, _logger, "/sns/jscode2session", weChatApiPara);
+                var url = $"/sns/jscode2session?appid={appid}&secret={secret}&js_code={code}&grant_type=authorization_code";
+
+               var wechatResponse = await HttpClientExtensions.GetData<WeChatApi>(_client, _logger, url);
 
                 if (!string.IsNullOrEmpty(wechatResponse.openid ))
                 {
                     _logger.LogInformation($"{funName},获取open - {wechatResponse.openid}");
                     result.success = true;
+                    result.msg = "获取OpenId成功";
                     result.response = wechatResponse;
                 }
                 else

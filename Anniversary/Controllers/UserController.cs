@@ -118,10 +118,10 @@ namespace Anniversary.Controllers
             };
         }
 
-        [HttpGet]
+        [HttpPost]
         [AllowAnonymous]
         [Route("GetOpenId")]
-        public async Task<MessageModel<WeChatApi>> GetOpenId(string code)
+        public async Task<MessageModel<WeChatApi>> GetOpenId(From fromBody)
         {
             MessageModel<WeChatApi> result = new MessageModel<WeChatApi>();
 
