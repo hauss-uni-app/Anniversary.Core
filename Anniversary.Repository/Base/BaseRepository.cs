@@ -127,7 +127,7 @@ namespace Anniversary.Repository.Base
             //return (int)i;
 
             var insert = _db.Insertable(entity);
-            return await insert.ExecuteReturnIdentityAsync();
+            return await insert.ExecuteCommandAsync();
         }
 
 
