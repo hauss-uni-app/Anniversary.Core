@@ -15,7 +15,7 @@ namespace Anniversary.IServices.Base
         Task<TEntity> QueryById(object objId, bool blnUseCache = false);
         Task<List<TEntity>> QueryByIDs(object[] lstIds);
 
-        Task<int> Add(TEntity model);
+        Task<int> Add(TEntity model, bool isReturnId = true);
 
         Task<bool> DeleteById(object id);
 

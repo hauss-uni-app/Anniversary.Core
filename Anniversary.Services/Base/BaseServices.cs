@@ -52,9 +52,9 @@ namespace Anniversary.Services.Base
         /// </summary>
         /// <param name="entity">博文实体类</param>
         /// <returns></returns>
-        public async Task<int> Add(TEntity entity)
+        public async Task<int> Add(TEntity entity, bool isReturnId)
         {
-            return await BaseDal.Add(entity);
+            return await BaseDal.Add(entity, isReturnId);
         }
 
         /// <summary>

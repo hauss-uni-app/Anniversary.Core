@@ -120,14 +120,18 @@ namespace Anniversary.Repository.Base
         /// </summary>
         /// <param name="entity">博文实体类</param>
         /// <returns></returns>
-        public async Task<int> Add(TEntity entity)
+        public async Task<int> Add(TEntity entity, bool isReturnId = true)
         {
             //var i = await Task.Run(() => _db.Insertable(entity).ExecuteReturnBigIdentity());
             ////返回的i是long类型,这里你可以根据你的业务需要进行处理
             //return (int)i;
 
             var insert = _db.Insertable(entity);
-            return await insert.ExecuteCommandAsync();
+
+            if (isReturnId)
+                return await insert.ExecuteReturnIdentityAsync();
+            else
+                return await insert.ExecuteCommandAsync();
         }
 
 

@@ -121,7 +121,7 @@ namespace Anniversary.Controllers
         [HttpPost]
         [AllowAnonymous]
         [Route("GetOpenId")]
-        public async Task<MessageModel<WeChatApi>> GetOpenId([FromBody] string code)
+        public async Task<MessageModel<WeChatApi>> GetOpenId(string code)
         {
             MessageModel<WeChatApi> result = new MessageModel<WeChatApi>();
 
@@ -144,7 +144,7 @@ namespace Anniversary.Controllers
                     Version = 0
                 };
 
-                var userId = await _userServices.Add(newUser);
+                var userId = await _userServices.Add(newUser, false);
                 if (userId > 0)
                 {
 
