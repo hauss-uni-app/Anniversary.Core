@@ -36,6 +36,14 @@ namespace Anniversary
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddAuthentication("Bearer")
+               .AddIdentityServerAuthentication(options =>
+               {
+                   options.Authority = "http://localhost:5000";
+                   options.RequireHttpsMetadata = false;
+                    //options.ApiName = "Home";//不设置此参数，代表所有接口全部使用权限
+                });
+
             services.AddCorsSetup();
 
             services.AddSingleton(new Appsettings(Env.ContentRootPath));
@@ -158,11 +166,11 @@ namespace Anniversary
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            DefaultFilesOptions defaultFilesOptions = new DefaultFilesOptions();
-            defaultFilesOptions.DefaultFileNames.Clear();
-            defaultFilesOptions.DefaultFileNames.Add("index.html");
-            app.UseDefaultFiles(defaultFilesOptions);
-            app.UseStaticFiles();
+            //DefaultFilesOptions defaultFilesOptions = new DefaultFilesOptions();
+            //defaultFilesOptions.DefaultFileNames.Clear();
+            //defaultFilesOptions.DefaultFileNames.Add("index.html");
+            //app.UseDefaultFiles(defaultFilesOptions);
+            //app.UseStaticFiles();
 
             if (env.IsDevelopment())
             {
@@ -176,11 +184,11 @@ namespace Anniversary
 
             // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.),
             // specifying the Swagger JSON endpoint.
-            //app.UseSwaggerUI(c =>
-            //{
-            //    c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
-            //    c.RoutePrefix = string.Empty;
-            //});
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+                c.RoutePrefix = string.Empty;
+            });
             app.UseCors("LimitRequests");
             app.UseRouting();
 

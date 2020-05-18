@@ -19,6 +19,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Anniversary.Services", "Ann
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Anniversary.OuterClient", "Anniversary.OuterClient\Anniversary.OuterClient.csproj", "{F19E3966-E5BF-4000-A78C-959E8A2DD043}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Identity", "Identity", "{0F8C4EE6-BDDC-4831-A013-5F180B602946}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Identity.Api", "Identity\Identity.Api\Identity.Api.csproj", "{7FF136E6-8EC4-4BC0-9D85-F9B6F8CA4655}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,9 +61,16 @@ Global
 		{F19E3966-E5BF-4000-A78C-959E8A2DD043}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F19E3966-E5BF-4000-A78C-959E8A2DD043}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F19E3966-E5BF-4000-A78C-959E8A2DD043}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7FF136E6-8EC4-4BC0-9D85-F9B6F8CA4655}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FF136E6-8EC4-4BC0-9D85-F9B6F8CA4655}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FF136E6-8EC4-4BC0-9D85-F9B6F8CA4655}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FF136E6-8EC4-4BC0-9D85-F9B6F8CA4655}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7FF136E6-8EC4-4BC0-9D85-F9B6F8CA4655} = {0F8C4EE6-BDDC-4831-A013-5F180B602946}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2F175CC1-8742-4D52-A743-C65C30E37472}
