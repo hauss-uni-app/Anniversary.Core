@@ -9,7 +9,7 @@ using Microsoft.Extensions.Logging;
 namespace Anniversary.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     [Authorize]
     public class WeatherForecastController : ControllerBase
     {

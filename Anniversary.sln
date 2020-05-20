@@ -21,7 +21,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Anniversary.OuterClient", "
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Identity", "Identity", "{0F8C4EE6-BDDC-4831-A013-5F180B602946}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Identity.Api", "Identity\Identity.Api\Identity.Api.csproj", "{7FF136E6-8EC4-4BC0-9D85-F9B6F8CA4655}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Identity.Api", "Identity\Identity.Api\Identity.Api.csproj", "{7FF136E6-8EC4-4BC0-9D85-F9B6F8CA4655}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

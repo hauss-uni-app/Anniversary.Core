@@ -41,7 +41,7 @@ namespace Anniversary
                {
                    options.Authority = "http://localhost:5000";
                    options.RequireHttpsMetadata = false;
-                    //options.ApiName = "Home";//不设置此参数，代表所有接口全部使用权限
+                    //options.ApiName = "api";//不设置此参数，代表所有接口全部使用权限
                 });
 
             services.AddCorsSetup();
@@ -190,6 +190,9 @@ namespace Anniversary
                 c.RoutePrefix = string.Empty;
             });
             app.UseCors("LimitRequests");
+
+            app.UseAuthentication();
+
             app.UseRouting();
 
             app.UseAuthorization();

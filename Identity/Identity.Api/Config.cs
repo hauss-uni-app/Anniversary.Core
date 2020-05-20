@@ -12,7 +12,7 @@ namespace Identity.Api
         {
             return new List<ApiResource>()
             {
-                new ApiResource("UserApi","User Api"),
+                new ApiResource("api","User Api"),
             };
         }
 
@@ -28,7 +28,7 @@ namespace Identity.Api
                     {
                         new Secret("HaussSecret".Sha256())
                     },
-                    AllowedScopes = { "UserApi" }
+                    AllowedScopes = { "api" }
                 }
             };
         }
