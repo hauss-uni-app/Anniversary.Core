@@ -1,0 +1,24 @@
+﻿{
+
+  "ReRoutes": [
+    { 
+      "DownstreamPathTemplate": "/api/user", //下游路径
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [ //下游Host和端口
+        {
+          "Host": "localhost",
+          "Port": 12345
+        }
+      ],
+      "UpstreamPathTemplate": "/user", //上游路径
+      "UpstreamHttpMethod": [ "Get", "Patch" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "hauss",
+        "AllowedScopes": [ "gateway_api" ]
+      }
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "http://localhost:8070"
+  }
+}

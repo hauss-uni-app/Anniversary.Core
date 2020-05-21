@@ -155,3 +155,6 @@
 /.vs
 /Identity/Identity.Api/bin/Debug/netcoreapp3.1
 /Identity/Identity.Api/obj
+/GateWay/GateWay.Api/bin/Debug/netcoreapp3.1
+/GateWay/GateWay.Api/obj
+/Identity/Identity.Api/bin/Release/netcoreapp3.1

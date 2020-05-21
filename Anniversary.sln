@@ -23,6 +23,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Identity", "Identity", "{0F
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Identity.Api", "Identity\Identity.Api\Identity.Api.csproj", "{7FF136E6-8EC4-4BC0-9D85-F9B6F8CA4655}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GateWay", "GateWay", "{A7EB3B25-9FBC-4C68-A4F1-4A41011E7F8E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GateWay.Api", "GateWay\GateWay.Api\GateWay.Api.csproj", "{A8A4DEF4-11FD-4825-A5EF-C784F5FB7B6E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -65,12 +69,17 @@ Global
 		{7FF136E6-8EC4-4BC0-9D85-F9B6F8CA4655}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7FF136E6-8EC4-4BC0-9D85-F9B6F8CA4655}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7FF136E6-8EC4-4BC0-9D85-F9B6F8CA4655}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8A4DEF4-11FD-4825-A5EF-C784F5FB7B6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8A4DEF4-11FD-4825-A5EF-C784F5FB7B6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8A4DEF4-11FD-4825-A5EF-C784F5FB7B6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8A4DEF4-11FD-4825-A5EF-C784F5FB7B6E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{7FF136E6-8EC4-4BC0-9D85-F9B6F8CA4655} = {0F8C4EE6-BDDC-4831-A013-5F180B602946}
+		{A8A4DEF4-11FD-4825-A5EF-C784F5FB7B6E} = {A7EB3B25-9FBC-4C68-A4F1-4A41011E7F8E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2F175CC1-8742-4D52-A743-C65C30E37472}

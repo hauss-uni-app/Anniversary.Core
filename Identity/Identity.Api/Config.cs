@@ -12,7 +12,8 @@ namespace Identity.Api
         {
             return new List<ApiResource>()
             {
-                new ApiResource("api","User Api"),
+                //new ApiResource("api","User Api"),
+                new ApiResource("gateway_api","GateWay Api"),
             };
         }
 
@@ -20,15 +21,25 @@ namespace Identity.Api
         {
             return new List<Client>()
             {
+                //new Client()
+                //{
+                //    ClientId = "UserClient",
+                //    AllowedGrantTypes = GrantTypes.ClientCredentials,
+                //    ClientSecrets = new List<Secret>()
+                //    {
+                //        new Secret("HaussSecret".Sha256())
+                //    },
+                //    AllowedScopes = { "api" }
+                //},
                 new Client()
                 {
-                    ClientId = "UserClient",
+                    ClientId = "GateWayClient",
                     AllowedGrantTypes = GrantTypes.ClientCredentials,
                     ClientSecrets = new List<Secret>()
                     {
                         new Secret("HaussSecret".Sha256())
                     },
-                    AllowedScopes = { "api" }
+                    AllowedScopes = { "gateway_api" }
                 }
             };
         }

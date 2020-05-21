@@ -36,13 +36,13 @@ namespace Anniversary
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddAuthentication("Bearer")
-               .AddIdentityServerAuthentication(options =>
-               {
-                   options.Authority = "http://localhost:5000";
-                   options.RequireHttpsMetadata = false;
-                    //options.ApiName = "api";//不设置此参数，代表所有接口全部使用权限
-                });
+            //services.AddAuthentication("Bearer")
+            //   .AddIdentityServerAuthentication(options =>
+            //   {
+            //       options.Authority = "http://localhost:5000";
+            //       options.RequireHttpsMetadata = false;
+            //        //options.ApiName = "api";//不设置此参数，代表所有接口全部使用权限
+            //    });
 
             services.AddCorsSetup();
 
@@ -191,7 +191,7 @@ namespace Anniversary
             });
             app.UseCors("LimitRequests");
 
-            app.UseAuthentication();
+            //app.UseAuthentication();
 
             app.UseRouting();
 
