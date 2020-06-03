@@ -19,9 +19,12 @@
     <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="6.0.0" />
     <PackageReference Include="Autofac.Extras.DynamicProxy" Version="5.0.0" />
     <PackageReference Include="AutoMapper" Version="9.0.0" />
+    <PackageReference Include="Consul" Version="0.7.2.6" />
+    <PackageReference Include="DnsClient" Version="1.3.2" />
     <PackageReference Include="IdentityServer4.AccessTokenValidation" Version="3.0.1" />
     <PackageReference Include="log4net" Version="2.0.8" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.9.10" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.0.0-rc4" />
   </ItemGroup>
 
@@ -29,9 +32,9 @@
     <ProjectReference Include="..\Anniversary.Common\Anniversary.Common.csproj" />
     <ProjectReference Include="..\Anniversary.IRepository\Anniversary.IRepository.csproj" />
     <ProjectReference Include="..\Anniversary.IServices\Anniversary.IServices.csproj" />
-    <ProjectReference Include="..\Anniversary.OuterClient\Anniversary.OuterClient.csproj" />
     <ProjectReference Include="..\Anniversary.Repository\Anniversary.Repository.csproj" />
     <ProjectReference Include="..\Anniversary.Services\Anniversary.Services.csproj" />
+    <ProjectReference Include="..\Resilience\Resilience.csproj" />
   </ItemGroup>
 
   <ItemGroup>

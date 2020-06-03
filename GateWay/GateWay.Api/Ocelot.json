@@ -1,24 +1,52 @@
 ﻿{
 
   "ReRoutes": [
-    { 
-      "DownstreamPathTemplate": "/api/user", //下游路径
+    {
+      "DownstreamPathTemplate": "/api/user/{catchAll}", //下游路径
       "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [ //下游Host和端口
-        {
-          "Host": "localhost",
-          "Port": 12345
-        }
-      ],
-      "UpstreamPathTemplate": "/user", //上游路径
-      "UpstreamHttpMethod": [ "Get", "Patch" ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "hauss",
-        "AllowedScopes": [ "gateway_api" ]
-      }
+      //"DownstreamHostAndPorts": [ //下游Host和端口
+      //  {
+      //    "Host": "localhost",
+      //    "Port": 12345
+      //  }
+      //],
+      "ServiceName": "anniversaryapi",
+      "UpstreamPathTemplate": "/user/{catchAll}", //上游路径
+      "UpstreamHttpMethod": [ "Get", "Patch", "Post" ],
+      //"AuthenticationOptions": {
+      //  "AuthenticationProviderKey": "hauss",
+      //  "AllowedScopes": [ "gateway_api" ]
+      //},
+      "UseServiceDiscovery": true,
+      "LoadBalancer": "LeastConnection"
+    },
+    {
+      "DownstreamPathTemplate": "/api/wechatapi/{catchAll}", //下游路径
+      "DownstreamScheme": "http",
+      //"DownstreamHostAndPorts": [ //下游Host和端口
+      //  {
+      //    "Host": "localhost",
+      //    "Port": 12344
+      //  }
+      //],
+      "ServiceName": "outerclientapi",
+      "UpstreamPathTemplate": "/we/{catchAll}", //上游路径
+      "UpstreamHttpMethod": [ "Get", "Post" ],
+      "UseServiceDiscovery": true,
+      "LoadBalancer": "LeastConnection"
+
+      //"AuthenticationOptions": {
+      //  "AuthenticationProviderKey": "hauss",
+      //  "AllowedScopes": [ "gateway_api" ]
+      //}
     }
   ],
   "GlobalConfiguration": {
-    "BaseUrl": "http://localhost:8070"
+    //"BaseUrl": "http://localhost:8070",
+    "ServiceDiscoveryProvider": {
+      "Host": "127.0.0.1",
+      "Port": 8500
+      //"ConfigurationKey": "Oceolot_A" //存储在Consul上的Key
+    }
   }
 }

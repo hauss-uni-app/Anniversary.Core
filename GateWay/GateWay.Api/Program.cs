@@ -18,14 +18,15 @@ namespace GateWay.Api
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
-            .ConfigureAppConfiguration((webhost, builder) =>
-            {
-                builder.SetBasePath(webhost.HostingEnvironment.ContentRootPath)
-                        .AddJsonFile("Ocelot.json");
-            })
+            //.ConfigureAppConfiguration((webhost, builder) =>
+            //{
+            //    builder.SetBasePath(webhost.HostingEnvironment.ContentRootPath)
+            //            .AddJsonFile("Ocelot.json");
+            //})
             .ConfigureWebHostDefaults(webBuilder =>
             {
                 webBuilder.UseStartup<Startup>();
+                webBuilder.UseUrls("http://192.168.15.114:8070");
             });
     }
 }

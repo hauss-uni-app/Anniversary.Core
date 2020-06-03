@@ -6,9 +6,15 @@ using Anniversary.Common.Helper;
 using Anniversary.IServices;
 using Anniversary.Model;
 using Anniversary.Model.Models;
-using Anniversary.OuterClient;
+using DnsClient;
 using Microsoft.AspNetCore.Authorization;
+//using Anniversary.OuterClient;
+//using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
+using Newtonsoft.Json;
+using Resilience;
 using SqlSugar;
 
 namespace Anniversary.Controllers
@@ -20,14 +26,35 @@ namespace Anniversary.Controllers
         readonly IUserServices _userServices;
         readonly IInfoServices _infoServices;
         readonly IInfoDetailServices _infoDetailServices;
-        readonly IWechatApiClient _wechatApiClient;
+        //readonly IWechatApiClient _wechatApiClient;
+        private ILogger<UserController> _logger;
+        private IHttpClient _httpClient;
+        private string _wechatApiServiceUrl;
 
-        public UserController(IUserServices userServices, IInfoServices infoServices, IInfoDetailServices infoDetailServices, IWechatApiClient wechatApiClient = null)
+        public UserController(IUserServices userServices,
+            IInfoServices infoServices,
+            IInfoDetailServices infoDetailServices,
+            IHttpClient httpClient = null,
+            IDnsQuery dnsQuery = null,
+            IOptions<Options.ServiceDiscoveryOptions> serviceDiscoveryOptions = null,
+            ILogger<UserController> logger = null/*, IWechatApiClient wechatApiClient = null*/)
         {
             _userServices = userServices;
             _infoServices = infoServices;
             _infoDetailServices = infoDetailServices;
-            _wechatApiClient = wechatApiClient;
+            _logger = logger;
+            _httpClient = httpClient;
+            //_wechatApiClient = wechatApiClient;
+
+
+            var address = dnsQuery.ResolveService("service.consul",
+                serviceDiscoveryOptions.Value.OuterClientServiceName);
+            var addressList = address.First().AddressList;
+
+            var host = addressList.Any() ? addressList.First().ToString() : address.First().HostName;
+            var port = address.First().Port;
+
+            _wechatApiServiceUrl = $"http://{host}:{port}";
         }
 
         /// <returns></returns>
@@ -123,11 +150,37 @@ namespace Anniversary.Controllers
         [Route("GetOpenId")]
         public async Task<MessageModel<WeChatApi>> GetOpenId(string code)
         {
-            MessageModel<WeChatApi> result = new MessageModel<WeChatApi>();
+            //MessageModel<WeChatApi> result = new MessageModel<WeChatApi>();
 
-            result = await _wechatApiClient.GetOpenIDAsync(Appsettings.app(new string[] { "Wechat", "AppID" }), Appsettings.app(new string[] { "Wechat", "AppSecret" }), code);
+            //result = await _wechatApiClient.GetOpenIDAsync(Appsettings.app(new string[] { "Wechat", "AppID" }), Appsettings.app(new string[] { "Wechat", "AppSecret" }), code);
 
-            return result;
+            //return result;
+
+            _logger.LogTrace($"Enter into GetOpenId:{code}");
+            var form = new Dictionary<string, string> {
+                {"appid", Appsettings.app(new string[] { "Wechat", "AppID" })},
+                {"secret", Appsettings.app(new string[] { "Wechat", "AppSecret" })},
+                {"code", code},
+            };
+
+            try
+            {
+                var response = await _httpClient.PostAsync(string.Concat(_wechatApiServiceUrl, "/api/WechatApi/getwechatopenid"), form);
+                if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                {
+                    var result = await response.Content.ReadAsStringAsync();
+                    var weChatApiInfo = JsonConvert.DeserializeObject<MessageModel<WeChatApi>>(result);
+                    _logger.LogTrace($"Completed GetOpenId with openid:{weChatApiInfo.response?.openid}");
+                    return weChatApiInfo;
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(" GetOpenId 在重试之后失败", ex.Message + ex.StackTrace);
+                throw ex;
+            }
+            return null;
+
         }
 
         private async Task<List<AllData>> UserInitialAsync(string openId)

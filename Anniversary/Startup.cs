@@ -6,18 +6,27 @@ using System.Reflection;
 using System.Threading.Tasks;
 using Anniversary.Common.Helper;
 using Anniversary.Extensions;
-using Anniversary.OuterClient.Extensions;
+using Anniversary.Infrastructure;
+using Anniversary.Options;
 using Autofac;
 using Autofac.Extras.DynamicProxy;
+using Consul;
+using DnsClient;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Hosting.Server.Features;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http.Features;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
+using Resilience;
+using IApplicationLifetime = Microsoft.AspNetCore.Hosting.IApplicationLifetime;
 
 namespace Anniversary
 {
@@ -44,6 +53,44 @@ namespace Anniversary
             //        //options.ApiName = "api";//不设置此参数，代表所有接口全部使用权限
             //    });
 
+            //Binding AppSetting ServiceDiscoveryOptions
+            services.Configure<ServiceDiscoveryOptions>(Configuration.GetSection("ServiceDiscovery"));
+
+            //AddSingleton IDnsQuery
+            services.AddSingleton<IDnsQuery>(d =>
+            {
+                var serviceConfiguration = d.GetRequiredService<IOptions<ServiceDiscoveryOptions>>().Value;
+                return new LookupClient(serviceConfiguration.Consul.DnsEndpoint.ToIPEndPoint());
+            });
+
+            //AddSingleton IConsulClient
+            services.AddSingleton<IConsulClient>(s => new ConsulClient(cfg =>
+            {
+                var servicesConfiguration = s.GetRequiredService<IOptions<ServiceDiscoveryOptions>>().Value;
+                if (!string.IsNullOrEmpty(servicesConfiguration.Consul.HttpEndpoint))
+                {
+                    cfg.Address = new Uri(servicesConfiguration.Consul.HttpEndpoint);
+                }
+            }));
+
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
+            //AddSingleton ResilienveClientFactory
+            services.AddSingleton(sp =>
+            {
+                var logger = sp.GetRequiredService<ILogger<ResilienceHttpClient>>();
+                var httpContextAccessor = sp.GetRequiredService<IHttpContextAccessor>();
+                var retryCount = 5;
+                var exceptionCountAllowedBeforeBreaking = 5;
+                return new ResilienceClientFactory(logger, httpContextAccessor, retryCount, exceptionCountAllowedBeforeBreaking);
+            });
+
+            // AddSingleton IHttpClient
+            services.AddSingleton<IHttpClient>(sp =>
+            {
+                return sp.GetRequiredService<ResilienceClientFactory>().GetResilienceHttpClient();
+            });
+
             services.AddCorsSetup();
 
             services.AddSingleton(new Appsettings(Env.ContentRootPath));
@@ -52,7 +99,7 @@ namespace Anniversary
             services.AddDbSetup();
             services.AddControllers();
 
-            services.AddWechatApiClient();
+            //services.AddWechatApiClient();
 
             // Register the Swagger generator, defining 1 or more Swagger documents
             services.AddSwaggerGen(c =>
@@ -158,13 +205,15 @@ namespace Anniversary
             //    .EnableClassInterceptors()
             //    .InterceptedBy(cacheType.ToArray());
 
+            builder.RegisterAssemblyTypes(Assembly.GetAssembly(typeof(IHttpContextAccessor)));
             #endregion
 
         }
 
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IApplicationLifetime lifetime,
+            IOptions<ServiceDiscoveryOptions> options, IConsulClient consul)
         {
             //DefaultFilesOptions defaultFilesOptions = new DefaultFilesOptions();
             //defaultFilesOptions.DefaultFileNames.Clear();
@@ -176,6 +225,16 @@ namespace Anniversary
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            lifetime.ApplicationStarted.Register(() =>
+            {
+                RegisterService(app, options, consul);
+            });
+
+            lifetime.ApplicationStopped.Register(() =>
+            {
+                DeRegisterService(app, options, consul);
+            });
 
             app.UseHttpsRedirection();
 
@@ -205,6 +264,51 @@ namespace Anniversary
 
         }
 
+        private void RegisterService(IApplicationBuilder app,
+            IOptions<ServiceDiscoveryOptions> serviceOptions,
+            IConsulClient consul)
+        {
+            var features = app.Properties["server.Features"] as FeatureCollection;
+            var addresses = features.Get<IServerAddressesFeature>()
+                .Addresses
+                .Select(p => new Uri(p));
 
+            foreach (var address in addresses)
+            {
+                var serviceId = $"{serviceOptions.Value.ServiceName}_{address.Host}:{address.Port}";
+
+                var httpCheck = new AgentServiceCheck()
+                {
+                    DeregisterCriticalServiceAfter = TimeSpan.FromMinutes(1),
+                    Interval = TimeSpan.FromSeconds(30),
+                    HTTP = new Uri(address, "HealthCheck").OriginalString
+                };
+
+                var registration = new AgentServiceRegistration()
+                {
+                    Check = httpCheck,
+                    Address = address.Host,
+                    ID = serviceId,
+                    Name = serviceOptions.Value.ServiceName,
+                    Port = address.Port
+                };
+
+                consul.Agent.ServiceRegister(registration).GetAwaiter().GetResult();
+            }
+        }
+
+        private void DeRegisterService(IApplicationBuilder app, IOptions<ServiceDiscoveryOptions> serviceOptions, IConsulClient consul)
+        {
+            var features = app.Properties["server.Features"] as FeatureCollection;
+            var addresses = features.Get<IServerAddressesFeature>()
+                .Addresses
+                .Select(p => new Uri(p));
+
+            foreach (var address in addresses)
+            {
+                var serviceId = $"{serviceOptions.Value.ServiceName}_{address.Host}:{address.Port}";
+                consul.Agent.ServiceDeregister(serviceId).GetAwaiter().GetResult();
+            }
+        }
     }
 }
