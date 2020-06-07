@@ -42,7 +42,7 @@ namespace Anniversary.OuterClient.Controllers
         public async Task<IActionResult> GetOpenIDAsync(string appid, string secret, string code)
         {
             MessageModel<WeChatApi> result = new MessageModel<WeChatApi>();
-            throw new HttpRequestException();
+            //throw new HttpRequestException();
             string funName = "Get Wechat Data By Code";
 
             //try

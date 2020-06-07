@@ -37,7 +37,7 @@ namespace GateWay.Api
             services.AddAuthentication()
                 .AddIdentityServerAuthentication(authenticationProviderKey, options =>
                 {
-                    options.Authority = "http://localhost:5000";    //IdentityServerµÿ÷∑
+                    options.Authority = "http://192.168.15.114:5000";    //IdentityServerµÿ÷∑
                     options.ApiName = "gateway_api";
                     options.SupportedTokens = SupportedTokens.Both;
                     options.ApiSecret = "HaussSecret";
